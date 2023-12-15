@@ -1,5 +1,4 @@
 # pddl-logistic-trucks
-pddl-logistic-trucks
 
 Neste projeto foi construído um cenário hipotético onde, em uma grande empresa de logística, existe um complexo sistema de transporte para gerenciar a movimentação de cargas diversas entre múltiplos locais. Este sistema é composto por uma frota de caminhões, um grupo de motoristas experientes e uma variedade de cargas, cada uma pertencendo a categorias específicas. A empresa opera em uma rede de locais, incluindo armazéns, centros de distribuição e pontos de entrega.
 

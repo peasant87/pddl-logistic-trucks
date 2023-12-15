@@ -1,0 +1,141 @@
+INFO     planner time limit: 1800s
+INFO     planner memory limit: None
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: 1799s
+INFO     translator memory limit: None
+INFO     translator command line string: /home/tiago/.pyenv/versions/3.10.9/bin/python /home/tiago/downloads/fast-downward-23.06/fast-downward-23.06/builds/release/bin/translate/translate.py ../../../workspace/unified-planning/truck/pddl-logistic-trucks/cargo/domain.pddl ../../../workspace/unified-planning/truck/pddl-logistic-trucks/cargo/problem1.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.020s CPU, 0.005s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.005s wall-clock]
+Preparing model... [0.000s CPU, 0.002s wall-clock]
+Generated 47 rules.
+Computing model... [0.010s CPU, 0.010s wall-clock]
+161 relevant atoms
+276 auxiliary atoms
+437 final queue length
+495 total queue pushes
+Completing instantiation... [0.010s CPU, 0.004s wall-clock]
+Instantiating: [0.020s CPU, 0.022s wall-clock]
+Computing fact groups...
+Finding invariants...
+6 initial candidates
+Finding invariants: [0.000s CPU, 0.003s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.001s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+0 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [0.000s CPU, 0.006s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Computing negative axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.001s wall-clock]
+Translating task: [0.010s CPU, 0.003s wall-clock]
+0 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+8 propositions removed
+Detecting unreachable propositions: [0.000s CPU, 0.002s wall-clock]
+Reordering and filtering variables...
+8 of 8 variables necessary.
+0 of 8 mutex groups necessary.
+64 of 64 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [0.000s CPU, 0.001s wall-clock]
+Translator variables: 8
+Translator derived variables: 0
+Translator facts: 38
+Translator goal facts: 4
+Translator mutex groups: 0
+Translator total mutex groups size: 0
+Translator operators: 64
+Translator axioms: 0
+Translator task size: 338
+Translator peak memory: 26208 KB
+Writing output... [0.000s CPU, 0.001s wall-clock]
+Done! [0.050s CPU, 0.042s wall-clock]
+translate exit code: 0
+
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: 1799s
+INFO     search memory limit: None
+INFO     search command line string: /home/tiago/downloads/fast-downward-23.06/fast-downward-23.06/builds/release/bin/downward --search 'astar(lmcut())' --internal-plan-file sas_plan < output.sas
+[t=0.0100322s, 11024 KB] reading input...
+[t=0.0199183s, 11024 KB] done reading input!
+[t=0.0598417s, 11280 KB] Initializing landmark cut heuristic...
+[t=0.0598417s, 11280 KB] Building successor generator...done!
+[t=0.0598417s, 11280 KB] peak memory difference for successor generator creation: 0 KB
+[t=0.0598417s, 11280 KB] time for successor generation creation: 0s
+[t=0.0598417s, 11280 KB] Variables: 8
+[t=0.0598417s, 11280 KB] FactPairs: 38
+[t=0.0598417s, 11280 KB] Bytes per state: 4
+[t=0.0598417s, 11280 KB] Conducting best first search with reopening closed nodes, (real) bound = 2147483647
+[t=0.0598417s, 11280 KB] New best heuristic value for lmcut(): 2
+[t=0.0598417s, 11280 KB] g=0, 1 evaluated, 0 expanded
+[t=0.0598417s, 11280 KB] f = 2, 1 evaluated, 0 expanded
+[t=0.0598417s, 11280 KB] Initial heuristic value for lmcut(): 2
+[t=0.0598417s, 11280 KB] pruning method: none
+[t=0.0598417s, 11280 KB] f = 3, 64 evaluated, 16 expanded
+[t=0.0698171s, 11280 KB] New best heuristic value for lmcut(): 1
+[t=0.0698171s, 11280 KB] g=2, 322 evaluated, 91 expanded
+[t=0.0698171s, 11280 KB] f = 4, 476 evaluated, 144 expanded
+[t=0.0698171s, 11280 KB] New best heuristic value for lmcut(): 0
+[t=0.0698171s, 11280 KB] g=4, 835 evaluated, 260 expanded
+[t=0.0698171s, 11280 KB] Solution found!
+[t=0.0698171s, 11280 KB] Actual search time: 0.0099754s
+board-truck tru2 loc2 drv2 cat2 (0)
+load-truck crg2 tru2 loc2 cat2 (0)
+drive-truck tru2 loc2 loc4 drv2 (1)
+unload-truck crg2 tru2 loc4 drv2 (0)
+board-truck tru2 loc4 drv2 cat2 (0)
+load-truck crg4 tru2 loc4 cat2 (0)
+drive-truck tru2 loc4 loc2 drv2 (1)
+board-truck tru1 loc1 drv1 cat1 (0)
+load-truck crg1 tru1 loc1 cat1 (0)
+drive-truck tru1 loc1 loc3 drv1 (1)
+unload-truck crg1 tru1 loc3 drv1 (0)
+board-truck tru1 loc3 drv1 cat1 (0)
+load-truck crg3 tru1 loc3 cat1 (0)
+drive-truck tru1 loc3 loc1 drv1 (1)
+unload-truck crg4 tru2 loc2 drv2 (0)
+unload-truck crg3 tru1 loc1 drv1 (0)
+[t=0.0698171s, 11280 KB] Plan length: 16 step(s).
+[t=0.0698171s, 11280 KB] Plan cost: 4
+[t=0.0698171s, 11280 KB] Expanded 266 state(s).
+[t=0.0698171s, 11280 KB] Reopened 0 state(s).
+[t=0.0698171s, 11280 KB] Evaluated 859 state(s).
+[t=0.0698171s, 11280 KB] Evaluations: 859
+[t=0.0698171s, 11280 KB] Generated 1585 state(s).
+[t=0.0698171s, 11280 KB] Dead ends: 0 state(s).
+[t=0.0698171s, 11280 KB] Expanded until last jump: 144 state(s).
+[t=0.0698171s, 11280 KB] Reopened until last jump: 0 state(s).
+[t=0.0698171s, 11280 KB] Evaluated until last jump: 476 state(s).
+[t=0.0698171s, 11280 KB] Generated until last jump: 840 state(s).
+[t=0.0698171s, 11280 KB] Number of registered states: 859
+[t=0.0698171s, 11280 KB] Int hash set load factor: 859/1024 = 0.838867
+[t=0.0698171s, 11280 KB] Int hash set resizes: 10
+[t=0.0698171s, 11280 KB] Search time: 0.0099754s
+[t=0.0698171s, 11280 KB] Total time: 0.0698171s
+Solution found.
+Peak memory: 11280 KB
+Remove intermediate file output.sas
+search exit code: 0
+
+INFO     Planner time: 0.57s

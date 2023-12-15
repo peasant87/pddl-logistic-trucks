@@ -1,0 +1,149 @@
+INFO     planner time limit: 1800s
+INFO     planner memory limit: None
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: 1799s
+INFO     translator memory limit: None
+INFO     translator command line string: /home/tiago/.pyenv/versions/3.10.9/bin/python /home/tiago/downloads/fast-downward-23.06/fast-downward-23.06/builds/release/bin/translate/translate.py ../../../workspace/unified-planning/truck/pddl-logistic-trucks/cargo/domain.pddl ../../../workspace/unified-planning/truck/pddl-logistic-trucks/cargo/problem10.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.000s CPU, 0.004s wall-clock]
+Normalizing task... [0.010s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.000s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.004s wall-clock]
+Preparing model... [0.000s CPU, 0.001s wall-clock]
+Generated 47 rules.
+Computing model... [0.040s CPU, 0.037s wall-clock]
+2842 relevant atoms
+2320 auxiliary atoms
+5162 final queue length
+8165 total queue pushes
+Completing instantiation... [0.070s CPU, 0.076s wall-clock]
+Instantiating: [0.110s CPU, 0.119s wall-clock]
+Computing fact groups...
+Finding invariants...
+6 initial candidates
+Finding invariants: [0.010s CPU, 0.003s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.002s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+0 uncovered facts
+Choosing groups: [0.000s CPU, 0.001s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [0.010s CPU, 0.007s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Computing negative axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.003s wall-clock]
+Translating task: [0.070s CPU, 0.069s wall-clock]
+0 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+28 propositions removed
+Detecting unreachable propositions: [0.040s CPU, 0.043s wall-clock]
+Reordering and filtering variables...
+28 of 28 variables necessary.
+0 of 28 mutex groups necessary.
+2264 of 2264 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [0.010s CPU, 0.011s wall-clock]
+Translator variables: 28
+Translator derived variables: 0
+Translator facts: 265
+Translator goal facts: 16
+Translator mutex groups: 0
+Translator total mutex groups size: 0
+Translator operators: 2264
+Translator axioms: 0
+Translator task size: 10997
+Translator peak memory: 34644 KB
+Writing output... [0.010s CPU, 0.016s wall-clock]
+Done! [0.270s CPU, 0.274s wall-clock]
+translate exit code: 0
+
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: 1799s
+INFO     search memory limit: None
+INFO     search command line string: /home/tiago/downloads/fast-downward-23.06/fast-downward-23.06/builds/release/bin/downward --search 'let(lmc,landmark_cost_partitioning(lm_merged([lm_rhw(),lm_hm(m=1)])),astar(lmc,lazy_evaluator=lmc))' --internal-plan-file sas_plan < output.sas
+[t=0.0010864s, 11024 KB] reading input...
+[t=0.0058751s, 11628 KB] done reading input!
+[t=0.0090962s, 11892 KB] Initializing landmark cost partitioning heuristic...
+[t=0.0090962s, 11892 KB] Generating landmark graph...
+[t=0.0090962s, 11892 KB] Merging 2 landmark graphs
+[t=0.0090962s, 11892 KB] Initializing Exploration...
+[t=0.0090962s, 12048 KB] Generating landmarks using the RPG/SAS+ approach
+[t=0.0172205s, 12180 KB] Removed 0 reasonable or obedient reasonable orders
+[t=0.0172205s, 12180 KB] Landmarks generation time: 0.0081243s
+[t=0.0172205s, 12180 KB] Discovered 61 landmarks, of which 5 are disjunctive and 0 are conjunctive.
+[t=0.0172205s, 12180 KB] 104 edges
+[t=0.0172205s, 12180 KB] h^m landmarks m=1
+[t=0.0172205s, 12180 KB] Using 265 P^m fluents.
+[t=0.0172205s, 12948 KB] h^m landmarks computed.
+[t=0.0172205s, 12948 KB] Calculating achievers.
+[t=0.0172205s, 12948 KB] Removed 0 reasonable or obedient reasonable orders
+[t=0.0172205s, 12948 KB] Landmarks generation time: 0s
+[t=0.0172205s, 12948 KB] Discovered 56 landmarks, of which 0 are disjunctive and 0 are conjunctive.
+[t=0.0172205s, 12948 KB] 60 edges
+[t=0.0172205s, 12948 KB] Adding simple landmarks
+[t=0.0272338s, 12948 KB] Adding disjunctive landmarks
+[t=0.0272338s, 12948 KB] Adding orderings
+[t=0.0272338s, 12948 KB] Removed 0 reasonable or obedient reasonable orders
+[t=0.0272338s, 12948 KB] Landmarks generation time: 0.0181376s
+[t=0.0272338s, 12948 KB] Discovered 61 landmarks, of which 5 are disjunctive and 0 are conjunctive.
+[t=0.0272338s, 12948 KB] 104 edges
+[t=0.0272338s, 12948 KB] Landmark graph generation time: 0.0181376s
+[t=0.0272338s, 12948 KB] Landmark graph contains 61 landmarks, of which 5 are disjunctive and 0 are conjunctive.
+[t=0.0272338s, 12948 KB] Landmark graph contains 104 orderings.
+[t=0.0272338s, 12948 KB] Building successor generator...done!
+[t=0.0272338s, 12948 KB] peak memory difference for successor generator creation: 0 KB
+[t=0.0272338s, 12948 KB] time for successor generation creation: 0s
+[t=0.0272338s, 12948 KB] Variables: 28
+[t=0.0272338s, 12948 KB] FactPairs: 265
+[t=0.0272338s, 12948 KB] Bytes per state: 16
+[t=0.0272338s, 12948 KB] Conducting best first search with reopening closed nodes, (real) bound = 2147483647
+[t=0.0272338s, 12948 KB] 18 initial landmarks, 16 goal landmarks
+[t=0.0272338s, 12948 KB] New best heuristic value for landmark_cost_partitioning(lm_merged([lm_rhw(),lm_hm(m=1)])): 16
+[t=0.0272338s, 12948 KB] g=0, 1 evaluated, 0 expanded
+[t=0.0272338s, 12948 KB] f = 16, 1 evaluated, 0 expanded
+[t=0.0272338s, 12948 KB] Initial heuristic value for landmark_cost_partitioning(lm_merged([lm_rhw(),lm_hm(m=1)])): 16
+[t=0.0272338s, 12948 KB] pruning method: none
+[t=0.0272338s, 12948 KB] New best heuristic value for landmark_cost_partitioning(lm_merged([lm_rhw(),lm_hm(m=1)])): 15
+[t=0.0272338s, 12948 KB] g=1, 27 evaluated, 4 expanded
+[t=0.0272338s, 12948 KB] New best heuristic value for landmark_cost_partitioning(lm_merged([lm_rhw(),lm_hm(m=1)])): 14
+[t=0.0272338s, 12948 KB] g=2, 145 evaluated, 25 expanded
+[t=0.0272338s, 12948 KB] New best heuristic value for landmark_cost_partitioning(lm_merged([lm_rhw(),lm_hm(m=1)])): 13
+[t=0.0272338s, 12948 KB] g=3, 246 evaluated, 33 expanded
+[t=0.0272338s, 12948 KB] New best heuristic value for landmark_cost_partitioning(lm_merged([lm_rhw(),lm_hm(m=1)])): 12
+[t=0.0272338s, 12948 KB] g=4, 410 evaluated, 46 expanded
+[t=0.0371962s, 12948 KB] New best heuristic value for landmark_cost_partitioning(lm_merged([lm_rhw(),lm_hm(m=1)])): 11
+[t=0.0371962s, 12948 KB] g=5, 688 evaluated, 68 expanded
+[t=0.0571968s, 12948 KB] New best heuristic value for landmark_cost_partitioning(lm_merged([lm_rhw(),lm_hm(m=1)])): 10
+[t=0.0571968s, 12948 KB] g=6, 2700 evaluated, 256 expanded
+[t=0.117194s, 12948 KB] New best heuristic value for landmark_cost_partitioning(lm_merged([lm_rhw(),lm_hm(m=1)])): 9
+[t=0.117194s, 12948 KB] g=7, 7502 evaluated, 743 expanded
+[t=45.9266s, 98848 KB] New best heuristic value for landmark_cost_partitioning(lm_merged([lm_rhw(),lm_hm(m=1)])): 8
+[t=45.9266s, 98848 KB] g=8, 1497302 evaluated, 152516 expanded
+[t=1423.17s, 4270160 KB] New best heuristic value for landmark_cost_partitioning(lm_merged([lm_rhw(),lm_hm(m=1)])): 7
+[t=1423.17s, 4270160 KB] g=9, 68038383 evaluated, 6970952 expanded
+[t=1423.38s, 4270824 KB] New best heuristic value for landmark_cost_partitioning(lm_merged([lm_rhw(),lm_hm(m=1)])): 6
+[t=1423.38s, 4270824 KB] g=10, 68050769 evaluated, 6972320 expanded
+Peak memory: 5584748 KB
+caught signal 24 -- exiting
+Time limit has been reached.
+Remove intermediate file output.sas
+search exit code: 23
+
+Driver aborting after search
+INFO     Planner time: 1799.80s
